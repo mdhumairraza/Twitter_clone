@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="1twitter_logo.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+    <style>
+        body {
+            /* height: 12000px; */
+            position: relative;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        main {
+            display: flex;
+            position: relative;
+            /* background-color: chartreuse; */
+        }
+
+        #twitter_logo img {
+            height: 50px;
+            width: 50px;
+        }
+
+        #one {
+            position: relative;
+            /* top: 0px; */
+            /* left: 0px; */
+            /* background-color: yellow; */
+            /* width: 21%; */
+            width: 27%;
+            /* display: flex; */
+            /* flex-direction: column; */
+            margin-left: 15px;
+            /* margin-top: 0px; */
+            /* justify-content: space-between; */
+        }
+
+        #one nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0px;
+            /* align-items: flex-start */
+        }
+
+        .side img {
+            width: 27px;
+            height: 27px;
+            margin-right: 20px;
+        }
+
+        .side {
+            display: flex;
+            padding: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            cursor: pointer;
+
+        }
+
+        /* #one nav span {
+            margin-top: 5px;
+        } */
+
+
+        .tweet {
+            border: 2px solid rgb(29, 155, 240);
+            background-color: rgb(29, 155, 240);
+            width: 90px;
+            border-radius: 40px;
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            padding: 9px 50px;
+
+
+        }
+
+        #profile {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            position: fixed;
+            bottom: 7px;
+        }
+
+        #profile img {
+            margin: 17px 10px;
+            height: 40px;
+            width: 40px;
+            /* border: 1px solid; */
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        #profile p {
+            margin-bottom: 0px;
+        }
+
+        #bottom_more {
+            margin-left: 25px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #two {
+            /* background-color: orange; */
+            /* width: 47%; */
+            width: 60%;
+            /* height: 5000px; */
+            border-right: 1px solid #c9bebe;
+            border-left: 1px solid #c9bebe;
+
+        }
+
+        #main_post {
+            border-top: 1px solid #c9bebe;
+        }
+
+        #post {
+            border: 5px solid white;
+            /* display: flex;
+            flex-direction: column; */
+            position: relative;
+            height: 170px;
+            background-color: white;
+        }
+
+        #post_home {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            font-size: 20px;
+
+        }
+
+        #post_write {
+            display: flex;
+            flex-direction: row;
+            margin-top: 59px;
+            margin-left: 19px;
+        }
+
+        #post_write img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+
+        }
+
+        #post_write input {
+            border: none;
+            padding: 10px;
+            font-size: 21px;
+            margin-left: 13px;
+        }
+
+
+        #post_logos {
+            display: flex;
+            flex-direction: row;
+            margin-left: 69px;
+            margin-top: 15px;
+            justify-content: space-between;
+            width: 200px;
+
+
+
+        }
+
+        #post_logos img {
+            height: 24px;
+            width: 24px;
+        }
+
+        #magic_logo {
+            position: absolute;
+            top: 3px;
+            right: 9px;
+
+        }
+
+        #magic_logo img {
+            height: 25px;
+            width: 25px;
+
+        }
+
+        #post_tweet {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+
+
+            border: 2px solid rgb(29, 155, 240);
+            background-color: rgb(29, 155, 240);
+            /* width: 90px; */
+            border-radius: 40px;
+            color: white;
+            font-size: 15px;
+            font-weight: 400;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            padding: 5px 17px;
+        }
+
+
+
+
+        /* #main_post {
+          padding-top: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+        #main_post img{
+            height: 500px;
+            width: 500px;
+        } */
+
+
+
+        #main_post{
+            border-bottom: 1px solid #c9bebe
+        }
+        .main_posts {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .main_posts img {
+            margin: 17px 10px;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .main_posts p {
+            margin-bottom: 0px;
+            font-weight: 500;
+            /* margin-left: 30px; */
+        }
+
+        .inner_flex {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #button {
+            margin-top: 9px;
+            justify-content: space-evenly;
+        }
+
+        #button img {
+
+            height: 20px;
+            width: 20px;
+        }
+
+
+
+
+
+
+
+
+        #forscroll {
+            display: flex;
+            width: -webkit-fill-available;
+        }
+
+
+
+
+        #three {
+            /* background-color: yellow; */
+            /* width: 31%; */
+            width: 40%;
+            position: sticky;
+            right: 0px;
+            top: 0px;
+            /* height: 100px; */
+            /* border: 5px solid green; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .right_nav {
+            /* border: 5px solid black; */
+            border-radius: 23px;
+            /* height: 300px; */
+            background-color: #eff4f5;
+            align-items: center;
+            width: 87%;
+            margin: 7px 0px;
+            /* height: 30px; */
+        }
+
+
+
+
+        #right_Search {
+            align-items: center;
+            /* justify-content: space-around; */
+            background-color: #e8eced;
+            display: flex;
+            flex-direction: row;
+            /* border: 1px solid; */
+            /* width: 87%; */
+            height: 43px;
+            border-radius: 29px;
+            /* margin-bottom: 20px; */
+            position: fixed;
+            width: 27%;
+            top: 5px;
+        }
+
+        #right_Search input {
+            height: 30px;
+            border: none;
+            font-size: 15px;
+            /* width: 100%; */
+            background-color: #e8eced;
+
+
+        }
+
+        #right_Search img {
+            padding-left: 30px;
+        }
+
+
+        #news {
+            display: flex;
+            flex-direction: column;
+            margin-top: 49px;
+            /* position: sticky;
+            top: 60px; */
+        }
+
+
+        /* #happ{
+    margin-top: 20px;
+    padding-left: 17px;
+} */
+
+
+
+
+
+        /* follow tab */
+        .para {
+            margin-top: 13px;
+            padding-right: 164px;
+            font-size: 19px;
+
+        }
+
+        .person {
+            /* border: 2px solid black; */
+            /* height: 30px; */
+            width: 87%;
+        }
+
+        .peoples {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .peoples img {
+            margin: 17px 10px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .peoples p {
+            margin-bottom: 0px;
+        }
+
+
+        #follow_tab {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .btn_follow {
+            margin-left: 33px;
+            margin-top: 27px;
+
+        }
+
+
+        .btn_follow a {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            padding: 3px 9px;
+            border-radius: 15px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .showMoreLink {
+            color: #0099d7;
+            margin-bottom: 17px;
+            text-decoration: none;
+            font-weight: 400;
+            padding-right: 65%;
+
+        }
+
+
+
+
+
+
+        #lastnav {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0px;
+        }
+
+        #last_nav_one {
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+            /* margin-left: 40px; */
+        }
+
+        #last_nav_two {
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+            /* margin-left: 40px; */
+        }
+
+        #last_nav_three {
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+            /* margin-left: 50px; */
+        }
+
+        #lastnav a {
+            padding: 5px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #message_box {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid rgb(202, 197, 197);
+            justify-content: space-between;
+            position: fixed;
+            bottom: 0px;
+            right: 31px;
+            width: 343px;
+            background-color: white;
+            height: 50px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        #mess {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 17px;
+
+        }
+
+        #mess_icon {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 15px;
+            margin-right: 20px;
+        }
+
+        #mess_icon img {
+            height: 25px;
+            width: 25px;
+            margin-left: 15px;
+        }
+
+
+        a,
+        span,
+        img:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="one">
+            <nav>
+                <div id="twitter_logo">
+                    <img src="twitter_logo.png" alt="no image found">
+                </div>
+                <div id="side_nav">
+
+                    <div class="Home_side side">
+                        <div><img src="home_logo.png" alt=""></div>
+                        <div id="home_bold"><span><b>Home</b></span></div>
+                    </div>
+                    <div class="side">
+                        <div id="logo"><img src="hash_logo.png" alt=""></div>
+                        <div id="logo"><span>Explore</span></div>
+                    </div>
+                    <div class="side">
+                        <div id="logo"><img src="notification_logo.jpg" alt="image not found"></div>
+                        <div id="logo"><span>Notifications</span></div>
+                    </div>
+                    <div class="side">
+                        <div id="logo"><img src="message_logo.jpg" alt="image not found"></div>
+                        <div id="logo"><span>Messages</span></div>
+                    </div>
+                    <div class="side">
+                        <div id="logo"><img src="bookmark_logo.jpg" alt="image not found"></div>
+                        <div id="logo"><span>Bookmarks</span></div>
+                    </div>
+                    <!-- <div class="side">
+                        <div id="logo"><img src="lists_logo.png" alt="image not found"></div>
+                        <div id="logo"><span>Lists</span></div>
+                    </div> -->
+                    <div class="side">
+                        <div id="logo"><img src="profile_logo.png" alt="image not found"></div>
+                        <div id="logo"><span>Profile</span></div>
+                    </div>
+                    <div class="side">
+                        <div id="logo"><img src="more_logo.png" alt="image not found"></div>
+                        <div id="logo"><span>More</span></div>
+                    </div>
+                </div>
+                <div class="tweet side">Tweet
+
+                </div>
+                <div id="profile">
+                    <div>
+                        <img src="IMG_20220801_233412.jpg" alt="Humair">
+                    </div>
+                    <div>
+                        <span>
+                            <p><b>Md Humair RazA</b></p>
+                        </span>
+                        <span>
+                            @HumairRaza_
+                        </span>
+                    </div>
+                    <div id="bottom_more">
+                        <img src="more1_logo.png" alt="" height="25px" width="25px">
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <section id="forscroll">
+
+
+            <section id="two">
+                <div id="post">
+                    <div id="post_home"><strong>Home</strong></div>
+                    <div id="post_write">
+                        <div>
+                            <img src="IMG_20220801_233412.jpg" alt="">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="What’s happening?">
+                        </div>
+                    </div>
+                    <div id="post_logos">
+                        <div><img src="media_logo.jpeg" alt=""></div>
+                        <div><img src="gif+logo.png" alt=""></div>
+                        <div><img src="poll_logo.jpg" alt=""></div>
+                        <div><img src="smile_logo.jpg" alt=""></div>
+                        <div><img src="shedule_logo.jpg" alt=""></div>
+                        <div><img src="location_logo.png" alt=""></div>
+                    </div>
+                    <div id="magic_logo">
+                        <img src="star_logo.png" alt="">
+                    </div>
+                    <div id="post_tweet">
+                        <strong><span>Tweet</span></strong>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div id="main_post">
+                    <div>
+                        <div class="main_posts">
+                            <div class="inner_flex">
+                                <div>
+                                    <img src="IMG_20220801_233412.jpg" alt="Humair" height="50px" width="50px">
+                                </div>
+                                <div>
+                                    <span>
+                                        <p style="font-weight: 500;">Md Humair RazA</p>
+
+                                    </span>
+                                    <span>
+                                        @HumairRaza_
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="bottom_more">
+                                <img src="more1_logo.png" alt="" height="25px" width="25px">
+                            </div>
+                        </div>
+                    </div>
+                    <div style=" padding-left: 70px;">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi animi deserunt nam
+                            aspernatur iste tempore magni eum nemo numquam nostrum? Placeat dignissimos enim in
+                            architecto eligendi
+                            magni a beatae, delectus doloremque officiis, repellendus laborum quasi similique hic
+                            adipisci dolore quisquam, recusandae alias. Labore aliquid molestiae, veritatis aperiam
+                            eveniet similique quisquam?</span>
+                    </div>
+                    <div class="inner_flex" id="button">
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div id="main_post">
+                    <div>
+                        <div class="main_posts">
+                            <div class="inner_flex">
+                                <div>
+                                    <img src="IMG_20220801_233412.jpg" alt="Humair" height="50px" width="50px">
+                                </div>
+                                <div>
+                                    <span>
+                                        <p style="font-weight: 500;">Md Humair RazA</p>
+
+                                    </span>
+                                    <span>
+                                        @HumairRaza_
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="bottom_more">
+                                <img src="more1_logo.png" alt="" height="25px" width="25px">
+                            </div>
+                        </div>
+                    </div>
+                    <div style=" padding-left: 70px;">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi animi deserunt nam
+                            aspernatur iste tempore magni eum nemo numquam nostrum? Placeat dignissimos enim in
+                            architecto eligendi
+                            magni a beatae, delectus doloremque officiis, repellendus laborum quasi similique hic
+                            adipisci dolore quisquam, recusandae alias. Labore aliquid molestiae, veritatis aperiam
+                            eveniet similique quisquam?</span>
+                    </div>
+                    <div class="inner_flex" id="button">
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div id="main_post">
+                    <div>
+                        <div class="main_posts">
+                            <div class="inner_flex">
+                                <div>
+                                    <img src="IMG_20220801_233412.jpg" alt="Humair" height="50px" width="50px">
+                                </div>
+                                <div>
+                                    <span>
+                                        <p style="font-weight: 500;">Md Humair RazA</p>
+
+                                    </span>
+                                    <span>
+                                        @HumairRaza_
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="bottom_more">
+                                <img src="more1_logo.png" alt="" height="25px" width="25px">
+                            </div>
+                        </div>
+                    </div>
+                    <div style=" padding-left: 70px;">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi animi deserunt nam
+                            aspernatur iste tempore magni eum nemo numquam nostrum? Placeat dignissimos enim in
+                            architecto eligendi
+                            magni a beatae, delectus doloremque officiis, repellendus laborum quasi similique hic
+                            adipisci dolore quisquam, recusandae alias. Labore aliquid molestiae, veritatis aperiam
+                            eveniet similique quisquam?</span>
+                    </div>
+                    <div class="inner_flex" id="button">
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+                <div id="main_post">
+                    <div>
+                        <div class="main_posts">
+                            <div class="inner_flex">
+                                <div>
+                                    <img src="IMG_20220801_233412.jpg" alt="Humair" height="50px" width="50px">
+                                </div>
+                                <div>
+                                    <span>
+                                        <p style="font-weight: 500;">Md Humair RazA</p>
+
+                                    </span>
+                                    <span>
+                                        @HumairRaza_
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="bottom_more">
+                                <img src="more1_logo.png" alt="" height="25px" width="25px">
+                            </div>
+                        </div>
+                    </div>
+                    <div style=" padding-left: 70px;">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi animi deserunt nam
+                            aspernatur iste tempore magni eum nemo numquam nostrum? Placeat dignissimos enim in
+                            architecto eligendi
+                            magni a beatae, delectus doloremque officiis, repellendus laborum quasi similique hic
+                            adipisci dolore quisquam, recusandae alias. Labore aliquid molestiae, veritatis aperiam
+                            eveniet similique quisquam?</span>
+                    </div>
+                    <div class="inner_flex" id="button">
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+                        <div>
+                            <img src="message_logo_black.jpg" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+            <section id="three">
+
+                <div id="right_Search">
+                    <div>
+                        <img src="search_logo.png" alt="search">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Search Twitter">
+                    </div>
+                </div>
+
+                <div class="right_nav" id="news">
+                    <span class="para" id="happ">
+                        <strong> What's happening? </strong>
+                    </span>
+                    <img src="happ.jpg" alt="">
+                    <a href="#" class="showMoreLink"> Show More</a>
+
+                </div>
+
+                <div class="right_nav" id="follow_tab">
+                    <span class="para">
+                        <strong> Who to Follow? </strong>
+                    </span>
+
+                    <div class="person">
+                        <div class="peoples">
+                            <div>
+                                <img src="IMG_20220801_233412.jpg" alt="Humair">
+                            </div>
+                            <div>
+                                <span>
+                                    <p><b>Md Humair RazA</b></p>
+                                </span>
+                                <span>
+                                    @HumairRaza_
+                                </span>
+                            </div>
+                            <!-- <div class="f_btn"> -->
+                            <div class="btn_follow">
+                                <a href="#">Follow</a>
+                                <!-- <img src="more1_logo.png" alt="" height="25px" width="25px"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="peoples">
+                            <div>
+                                <img src="IMG_20220801_233412.jpg" alt="Humair">
+                            </div>
+                            <div>
+                                <span>
+                                    <p><b>Md Humair RazA</b></p>
+                                </span>
+                                <span>
+                                    @HumairRaza_
+                                </span>
+                            </div>
+                            <div class="btn_follow">
+                                <a href="#">Follow</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="peoples">
+                            <div>
+                                <img src="IMG_20220801_233412.jpg" alt="Humair">
+                            </div>
+                            <div>
+                                <span>
+                                    <p><b>Md Humair RazA</b></p>
+                                </span>
+                                <span>
+                                    @HumairRaza_
+                                </span>
+                            </div>
+                            <div class="btn_follow">
+                                <a href="#">Follow</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="showMoreLink"> Show More</a>
+                </div>
+
+
+                <div id="lastnav">
+
+
+                    <div id="last_nav_one">
+
+                        <div> <a href="">Terms of Service</a></div>
+                        <div> <a href="">Privacy Policy</a></div>
+                        <div> <a href="">Cookie Policy</a></div>
+                    </div>
+                    <div id="last_nav_two">
+
+                        <div> <a href="">Accessibility</a></div>
+                        <div><a href="">Ads info</a> </div>
+                        <div> <a href="">More...</a></div>
+                        <div><img src="" alt=""></a></div>
+                    </div>
+                    <div id="last_nav_three">
+                        <div> <a href="">2022 Twitter, Inc.</a> </div>
+                    </div>
+                </div>
+
+            </section>
+            <div id="message_box">
+                <div id="mess">
+                    <span id="message">Messages</span>
+                </div>
+                <div id="mess_icon">
+                    <div>
+                        <img src="message_logo_black.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="arrow_logo.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>
+
+
+<!-- Stilll need some touch up and some work 
+
+so the output is ......................-->
